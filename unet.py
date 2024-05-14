@@ -7,6 +7,10 @@ import torchvision.transforms as transforms
 import torchvision.transforms.functional as TF
 import matplotlib.pyplot as plt
 from torchviz import make_dot
+import numpy as np
+from torch.utils.data import Dataset
+import os
+from PIL import Image
 
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -188,12 +192,9 @@ def visualize_model_layers(model):
     for i, layer in enumerate(model.children()):
         print(f'Layer {i}: {layer}')
 
-model = UNet(in_channels=3, out_channels=1).to(device)
-
 model = UNet(in_channels = 3, out_channels = 1).to(device)
 dummy_input = torch.randn((1, 3, 32, 32)).to(device)
 mask = model(dummy_input)
 print(mask.shape)
 visualize_model_layers(model)
 
-make_dot(mask).render("model_arch", format="png")
