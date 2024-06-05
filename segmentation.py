@@ -46,7 +46,7 @@ def augment_and_save(image_path, mask_path):
     mask = cv2.imread(mask_path)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-    for i in range(10):  # Apply 4 different augmentations
+    for i in range(5):  # Apply 4 different augmentations
         # rezie image and mask
         image = cv2.resize(image, (256, 256))
         mask = cv2.resize(mask, (256, 256))

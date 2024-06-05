@@ -28,6 +28,7 @@ MANIFEST
 dataset/
 database/
 unet_chckpnt.pth.tar
+results/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
