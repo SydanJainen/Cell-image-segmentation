@@ -22,7 +22,7 @@ transform = A.Compose([
     A.RandomRotate90(),
     A.Flip(),
     A.Transpose(),
-    A.CLAHE(clip_limit=2),
+    A.CLAHE(clip_limit=3),
     A.OneOf([
         A.MotionBlur(p=0.2),
         A.MedianBlur(blur_limit=3, p=0.1),
@@ -46,7 +46,7 @@ def augment_and_save(image_path, mask_path):
     mask = cv2.imread(mask_path)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-    for i in range(10):  # Apply 4 different augmentations
+    for i in range(15):  # Apply 4 different augmentations
         # rezie image and mask
         image = cv2.resize(image, (256, 256))
         mask = cv2.resize(mask, (256, 256))
