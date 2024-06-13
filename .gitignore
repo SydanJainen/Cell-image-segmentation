@@ -29,6 +29,7 @@ dataset/
 database/
 unet_chckpnt.pth.tar
 results/
+resultsunet/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
